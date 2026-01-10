@@ -96,3 +96,76 @@ Where:
 - Gaussian return assumption
 - Not suitable alone for retail investors
 These are known and documented weaknesses of Markowitz optimization.
+
+# 📌 PHASE 3 — Risk Beyond Variance (Drawdowns & Downside Risk)
+## 🎯 Goal
+Extend the portfolio optimizer to model **real investor risk**, not just mathematical volatility.
+
+Phase 3 focuses on **path-dependent risk and downside risk**, which are critical in real-world portfolio management but often ignored in academic implementations.
+
+## Why Variance Is Not Enough ❓
+Variance treats:
+- Upside volatility ❌
+- Downside volatility ❌
+as equally bad.
+
+However, investors do not fear upside volatility — they fear losses and deep drawdowns.
+Two portfolios can have identical volatility but vastly different investor experiences.
+
+## 🧠 Concepts Introduced in Phase 3
+1. Cumulative Returns
+Tracks portfolio value over time:
+$$V_t​=∏_{i=1}^t​(1+r_i​)$$
+
+2. Drawdown
+Measures loss from the most recent peak:
+$$Drawdown_t=\frac{V_t - max(V_{0:t})}{max(V_{0:t})}$$
+This directly models *investor pain*.
+
+3. Maximum Drawdown
+Worst peak-to-trough loss during the period.
+Widely used by:
+- Hedge funds
+- PMS Desks
+- Risk Committees
+
+4. Downside Drawdown
+Volatility calculated **only for negative returns**.
+Unlike standard deviation, it **does not penalize upside volatility**.
+
+5. Sortino Ratio
+Improves upon Sharpe Ratio: 
+$$Sortino=\frac{R_p - R_f}{𝜎_{downside}}$$
+Focuses purely on downside risk.
+
+## 📊 Visualizations
+- Cumulative return comparison
+- Drawdown curves for:
+    - Equal-weight portfolio
+    - Optimized (Phase-2) portfolio
+These plots clearly show why volatility alone is misleading.
+
+| Metric        | Equal Weight | Optimized    |
+| ------------- | ------------ | ------------ |
+| Volatility    | Lower        | Higher       |
+| Sharpe Ratio  | Baseline     | Higher       |
+| Sortino Ratio | Lower        | Higher       |
+| Max Drawdown  | Often Lower  | Often Higher |
+
+## **📌 Key Insight:**
+Optimizing for Sharpe can increase drawdown risk.
+This is a real institutional trade-off.
+
+## ⚠️ Limitations (Intentional)
+- No transaction costs
+- No turnover penalty
+- No behavioral constraints
+- No tail-risk modeling (CVaR yet)
+
+# 📌 Disclaimer
+This project is for *educational and research purposes only*.
+It does **not** constitute financial or investment advice.
+
+# 👨‍💻 Author
+## Prithvi Sharan
+## Full Stack Developer for State Street Corporation and ML/AI Enthusiast

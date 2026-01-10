@@ -13,3 +13,9 @@ def plot_eff_frontier(mu, cov):
     plotting.plot_efficient_frontier(ef, ax=ax, show_assets=True)
     plt.title("Efficient Frontier")
     plt.show()
+    
+def plot_drawdown(drawdown_series, title):
+    drawdown_series.plot(figsize=(10,4))
+    plt.title(title)
+    plt.ylabel("Drawdown")
+    plt.show()
