@@ -119,7 +119,7 @@ $$V_t​=∏_{i=1}^t​(1+r_i​)$$
 
 2. Drawdown
 Measures loss from the most recent peak:
-$$Drawdown_t=\frac{V_t - max(V_{0:t})}{max(V_{0:t})}$$
+$$Drawdown_t=\frac{V_t - max(V_{0:t})}{max(V_{0:t})}$$  
 This directly models *investor pain*.
 
 3. Maximum Drawdown
@@ -135,7 +135,7 @@ Unlike standard deviation, it **does not penalize upside volatility**.
 
 5. Sortino Ratio
 Improves upon Sharpe Ratio: 
-$$Sortino=\frac{R_p - R_f}{𝜎_{downside}}$$
+$$Sortino=\frac{R_p - R_f}{𝜎_{downside}}$$  
 Focuses purely on downside risk.
 
 ## 📊 Visualizations
