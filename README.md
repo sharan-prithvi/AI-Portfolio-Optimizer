@@ -7,7 +7,7 @@
 
 # 🧠 Why This Project Matters
 
-Most portfolio projects jump directly to ML models.
+Most portfolio projects jump directly to ML models.  
 This project:
 
 - Starts with baselines
@@ -15,7 +15,7 @@ This project:
 - Adds AI only where it is justified
 
 This mirrors how real quant & AI teams work.
-
+  
 # PHASE 1 - Data Pipeline & Baseline Portfolio 
 ## Goal
 
@@ -38,7 +38,7 @@ $$r_t = \frac{P_t - P_{t-1}}{P_{t-1}}$$
 `returns_df.corr()`
 
 4. Equal-Weight Portfolio (Baseline)
-Each asset is assigned equal capital allocation.
+Each asset is assigned equal capital allocation.  
 
 Why this matters:
 - No assumptions
@@ -99,7 +99,7 @@ These are known and documented weaknesses of Markowitz optimization.
 
 # 📌 PHASE 3 — Risk Beyond Variance (Drawdowns & Downside Risk)
 ## 🎯 Goal
-Extend the portfolio optimizer to model **real investor risk**, not just mathematical volatility.
+Extend the portfolio optimizer to model **real investor risk**, not just mathematical volatility.  
 
 Phase 3 focuses on **path-dependent risk and downside risk**, which are critical in real-world portfolio management but often ignored in academic implementations.
 
@@ -109,7 +109,7 @@ Variance treats:
 - Downside volatility ❌
 as equally bad.
 
-However, investors do not fear upside volatility — they fear losses and deep drawdowns.
+However, investors do not fear upside volatility — they fear losses and deep drawdowns.  
 Two portfolios can have identical volatility but vastly different investor experiences.
 
 ## 🧠 Concepts Introduced in Phase 3
@@ -123,14 +123,14 @@ $$Drawdown_t=\frac{V_t - max(V_{0:t})}{max(V_{0:t})}$$
 This directly models *investor pain*.
 
 3. Maximum Drawdown
-Worst peak-to-trough loss during the period.
+Worst peak-to-trough loss during the period.  
 Widely used by:
 - Hedge funds
 - PMS Desks
 - Risk Committees
 
 4. Downside Drawdown
-Volatility calculated **only for negative returns**.
+Volatility calculated **only for negative returns**.  
 Unlike standard deviation, it **does not penalize upside volatility**.
 
 5. Sortino Ratio
@@ -153,7 +153,7 @@ These plots clearly show why volatility alone is misleading.
 | Max Drawdown  | Often Lower  | Often Higher |
 
 ## **📌 Key Insight:**
-Optimizing for Sharpe can increase drawdown risk.
+Optimizing for Sharpe can increase drawdown risk.  
 This is a real institutional trade-off.
 
 ## ⚠️ Limitations (Intentional)
@@ -163,9 +163,9 @@ This is a real institutional trade-off.
 - No tail-risk modeling (CVaR yet)
 
 # 📌 Disclaimer
-This project is for *educational and research purposes only*.
+This project is for *educational and research purposes only*.  
 It does **not** constitute financial or investment advice.
 
 # 👨‍💻 Author
-**Prithvi Sharan**
+**Prithvi Sharan**  
 *Full Stack Developer for State Street Corporation and ML/AI Enthusiast*
