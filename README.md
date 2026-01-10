@@ -167,5 +167,5 @@ This project is for *educational and research purposes only*.
 It does **not** constitute financial or investment advice.
 
 # 👨‍💻 Author
-## Prithvi Sharan
-## Full Stack Developer for State Street Corporation and ML/AI Enthusiast
+**Prithvi Sharan**
+*Full Stack Developer for State Street Corporation and ML/AI Enthusiast*
