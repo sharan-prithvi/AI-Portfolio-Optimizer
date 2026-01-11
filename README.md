@@ -196,6 +196,73 @@ Phase 4 addresses this directly.
 - Static expected returns
 - No stress testing
 
+# 📉 Phase 5 — Tail Risk Modeling & CVaR Optimization
+Phase 5 extends the portfolio optimizer beyond variance-based risk by explicitly modeling tail risk — extreme losses that occur during market crashes and volatility spikes.  
+This phase introduces:
+- Downside risk metrics (VaR, CVaR)
+- CVaR-based portfolio optimization
+- Real-world stress testing (COVID-19 crash)
+- Honest evaluation of tail-risk behavior
+
+## Why Tail Risk Matters
+
+Traditional mean–variance optimization assumes:
+- Normally distributed returns
+- Risk is symmetric
+- Volatility captures downside risk
+- These assumptions break during crises.
+
+CVaR (Conditional Value at Risk) is widely used in:
+- Hedge funds
+- Risk management teams
+- Regulatory capital models
+
+## Phase 5A — Tail Risk Metrics
+| Metric        | Description                                      |
+| ------------- | ------------------------------------------------ |
+| VaR (α)       | Loss threshold exceeded with probability (1 − α) |
+| CVaR (α)      | Expected loss beyond VaR                         |
+| Max Drawdown  | Worst peak-to-trough loss                        |
+| Recovery Time | Time to recover previous peak                    |
+
+### Methodology
+- Historical simulation (non-parametric)
+- Scenario-based loss distribution
+- Rolling portfolio value tracking
+
+### Validation
+- CVaR ≤ VaR
+- Drawdowns always ≤ 0
+- Metrics stable across windows
+
+## Phase 5B — CVaR Portfolio Optimization
+## Phase 5C — Stress Testing
+### Stress Scenarios Tested
+1. COVID-19 Crash (Feb–Apr 2020)
+- Market-wide correlation spike
+- Negative expected returns
+- Liquidity shock regime
+
+2. Volatility Spike Window
+- Sudden regime change
+- Extreme drawdowns
+- Risk model stress
+
+## Key Results & Findings
+| Metric        | Sharpe Portfolio | CVaR Portfolio |
+| ------------- | ---------------- | -------------- |
+| Mean Return   | Negative         | Negative       |
+| Max Drawdown  | ~25.6%           | ~25.6%         |
+| CVaR (95%)    | Similar          | Similar        |
+| Recovery Date | Same             | Same           |
+
+## Volatility Spike Results
+- CVaR portfolio exhibited:
+    - Slightly smoother tail loss distribution
+    - Comparable drawdowns
+    - No artificial overfitting
+This confirms **risk realism**, not curve-fitting.  
+  
 # 📌 Disclaimer
 This project is for *educational and research purposes only*.  
 It does **not** constitute financial or investment advice.
