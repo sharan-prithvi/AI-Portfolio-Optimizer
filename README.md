@@ -162,6 +162,40 @@ This is a real institutional trade-off.
 - No behavioral constraints
 - No tail-risk modeling (CVaR yet)
 
+# 📌 PHASE 4 - Risk Estimation & Stability  
+
+## 🎯 Goal
+Fix the single biggest failure point in portfolio optimization: unstable risk estimation.  
+Phase 4 improves portfolio behavior without any machine learning by replacing naive covariance estimation with institutional-grade risk models.    
+
+## Why Phase 4 Is Necessary ❓  
+Most portfolio optimizers use sample covariance, which:
+- Assumes returns are IID
+- Is extremely noisy
+- Produces unstable and concentrated portfolios
+- Breaks badly during regime shifts  
+Small errors in covariance estimation lead to large allocation errors.  
+Phase 4 addresses this directly.  
+
+## 🧠 Risk Models Implemented
+1. Sample Covariance (Baseline)
+2. EWMA Covariance (Exponentially Weighted Moving Average assigns more weight to recent returns)
+3. Shrinkage Covariance (Stability)
+
+## Typical Observation
+| Metric           | Sample Cov | EWMA     | Shrinkage |   |
+|------------------|------------|----------|-----------|---|
+| Weight Stability | ❌ Low      | ⚠️ Medium | ✅ High    |   |
+| Drawdown Depth   | ❌ High     | ⚠️ Medium | ✅ Lowest  |   |
+| Turnover         | ❌ High     | ⚠️ Medium | ✅ Low     |   |
+| Interpretability | ⚠️          | ✅        | ✅         |   |
+
+## ⚠️ Limitations (Phase 4)
+- No tail-risk modeling yet
+- No transaction cost modeling
+- Static expected returns
+- No stress testing
+
 # 📌 Disclaimer
 This project is for *educational and research purposes only*.  
 It does **not** constitute financial or investment advice.
